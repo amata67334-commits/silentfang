@@ -1,108 +1,207 @@
 <!doctype html>
-<html lang="th" class="h-full">
+<html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Silent Fang - บริการเกมมิ่งมืออาชีพ</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Silent Fang - บริการฟาร์มเกม รวดเร็ว ปลอดภัย ราคาถูก</title>
+  <meta name="description" content="Silent Fang บริการฟาร์มเกม ฟาร์มไอเท็ม เลเวลลิ่ง ทำเควส ฟาร์มเงิน ปลอดภัย 100% ราคาเป็นมิตร ติดต่อได้ผ่าน Facebook">
+  <meta property="og:title" content="Silent Fang - บริการฟาร์มเกม">
+  <meta property="og:description" content="ฟาร์มไอเท็ม เลเวลลิ่ง ทำเควส ฟาร์มเงิน ปลอดภัย 100% ราคาดี ติดต่อเราได้ทันที">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://amata67334-commits.github.io/silentfang/">
+  <meta property="og:image" content="/og-image.png">
+  <link rel="icon" href="/favicon.ico">
   <style>
-    body { box-sizing: border-box; font-family: 'Kanit', sans-serif; }
-    .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-    .feature-card { backdrop-filter: blur(10px); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
-    .pulse-animation { animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{transform:scale(1);}50%{transform:scale(1.05);} }
-    .glow-effect { box-shadow: 0 0 20px rgba(102,126,234,0.5); }
-    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+    :root{--bg1:#6b5bff;--bg2:#9b6bff;--accent1:#ff6b9a;--accent2:#8a6bff;--card:rgba(255,255,255,0.06);--glass:rgba(255,255,255,0.06);--glass-border:rgba(255,255,255,0.08)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family: 'Noto Sans Thai', Roboto, Arial, sans-serif;background:linear-gradient(180deg,var(--bg1),#5b4cff);color:#fff}
+    a{color:inherit;text-decoration:none}
+    header{padding:18px 16px;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,0.2)}
+    .nav{display:flex;gap:12px;align-items:center}
+    .nav a{padding:8px 12px;border-radius:8px;font-size:14px;background:transparent}
+    .hero{padding:8px 20px 40px;text-align:center}
+    .hero h1{font-size:44px;margin:6px 0 8px;opacity:0.95}
+    .hero p{margin:0 auto 18px;max-width:720px;color:rgba(255,255,255,0.9);font-size:16px}
+    .cta{display:inline-block;padding:14px 20px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));font-weight:700;box-shadow:0 10px 30px rgba(138,107,255,0.14)}
+
+    /* services */
+    .container{padding:18px}
+    .grid{display:grid;grid-template-columns:repeat(1,1fr);gap:14px}
+    .card{background:var(--glass);border:1px solid var(--glass-border);padding:18px;border-radius:14px;backdrop-filter:blur(6px)}
+    .card h3{margin:0 0 8px;font-size:20px;color:#ffd6ea}
+    .card p{margin:0;color:rgba(255,255,255,0.85)}
+    .icon{font-size:28px;margin-bottom:8px}
+
+    /* pricing */
+    .pricing{display:flex;gap:12px;overflow:auto;padding-bottom:12px}
+    .price{min-width:170px;padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04)}
+    .price h4{margin:0 0 6px}
+    .price strong{display:block;font-size:18px;margin-top:6px}
+
+    /* FAQ */
+    .faq .q{padding:12px 14px;border-radius:10px;background:rgba(0,0,0,0.06);margin-bottom:8px;border:1px solid rgba(255,255,255,0.03)}
+
+    /* reviews */
+    .reviews{display:flex;gap:12px;overflow:auto;padding:10px 0}
+    .review{min-width:220px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04)}
+
+    footer{padding:18px;color:rgba(255,255,255,0.75);font-size:14px;text-align:center}
+
+    /* responsive */
+    @media(min-width:720px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .pricing{overflow:visible}
+      header{padding:22px 48px}
+      .hero h1{font-size:64px}
+      .hero p{font-size:18px}
+    }
   </style>
 </head>
-<body class="h-full gradient-bg text-white">
-  <main class="min-h-full flex flex-col items-center justify-center px-4 py-8">
-    <!-- Header -->
-    <header class="text-center mb-12 max-w-4xl">
-      <h1 class="text-6xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 pulse-animation">Silent Fang</h1>
-      <p class="text-xl md:text-2xl font-light leading-relaxed text-purple-100 max-w-3xl mx-auto">
-        "หมดปัญหาน่าเบื่อ! เราฟาร์มให้คุณเอง กลับมาเล่นเมื่อไรก็พร้อมลุยทันที"
-      </p>
-    </header>
+<body>
+  <header>
+    <div class="logo">
+      <div class="mark">SF</div>
+      <div>
+        <div style="font-weight:700">Silent Fang</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.8)">ฟาร์มเกม รวดเร็ว ปลอดภัย</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#services">บริการ</a>
+      <a href="#pricing">ราคา</a>
+      <a href="#faq">คำถามที่พบบ่อย</a>
+      <a class="cta" href="https://www.facebook.com/share/1DFqSrykG3/" target="_blank">สั่งฟาร์ม / ดูราคาบริการ</a>
+    </nav>
+  </header>
 
-    <!-- Features -->
-    <section class="grid md:grid-cols-3 gap-8 mb-12 max-w-5xl w-full">
-      <!-- Feature 1 -->
-      <div class="feature-card rounded-2xl p-8 text-center hover-lift">
-        <div class="mb-6">
-          <svg class="w-16 h-16 mx-auto text-green-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-semibold mb-4 text-green-300">ปลอดภัย 100%</h3>
-        <p class="text-purple-200">ระบบรักษาความปลอดภัยระดับสูง ไม่มีความเสี่ยงต่อบัญชีของคุณ</p>
+  <section class="hero">
+    <h1>Silent Fang</h1>
+    <p>"หมดปัญหาน่าเบื่อ! เราฟาร์มให้คุณเอง กลับมาเล่นเมื่อไรก็พร้อมลุยทันที" — บริการฟาร์มไอเท็ม, เลเวลลิ่ง, ทำเควส และฟาร์มเงิน สำหรับเกมยอดนิยม</p>
+  </section>
+
+  <main class="container">
+    <section id="services" class="grid">
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>ปลอดภัย 100%</h3>
+        <p>ระบบรักษาความปลอดภัยระดับสูง ไม่มีความเสี่ยงต่อบัญชีของคุณ เราใช้มาตรการป้องกันและทำงานด้วยความโปร่งใส</p>
       </div>
-      <!-- Feature 2 -->
-      <div class="feature-card rounded-2xl p-8 text-center hover-lift">
-        <div class="mb-6">
-          <svg class="w-16 h-16 mx-auto text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-semibold mb-4 text-yellow-300">ฟาร์มไว ได้ของครบ</h3>
-        <p class="text-purple-200">ทีมงานมืออาชีพ ฟาร์มรวดเร็ว ได้ไอเทมครบตามที่ต้องการ</p>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>ฟาร์มไว ได้ของครบ</h3>
+        <p>ทีมงานมืออาชีพ ฟาร์มรวดเร็ว ได้ไอเท็มตามความต้องการ พร้อมส่งหลักฐานการทำงาน</p>
       </div>
-      <!-- Feature 3 -->
-      <div class="feature-card rounded-2xl p-8 text-center hover-lift">
-        <div class="mb-6">
-          <svg class="w-16 h-16 mx-auto text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
-          </svg>
-        </div>
-        <h3 class="text-2xl font-semibold mb-4 text-blue-300">ราคาเป็นมิตร</h3>
-        <p class="text-purple-200">ราคาสุดคุ้ม เหมาะกับทุกงบ คุณภาพระดับพรีเมียม</p>
+
+      <div class="card">
+        <div class="icon">💸</div>
+        <h3>ราคาเป็นมิตร</h3>
+        <p>ราคาสุดคุ้ม เหมาะกับทุกงบ เรามีแพ็กเกจให้เลือกตามความต้องการ</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔎</div>
+        <h3>หาของ ฟาร์มไอเทม</h3>
+        <p>รับฟาร์มไอเทมหายาก, อาวุธ, เกราะ และไอเท็มพิเศษตามคำสั่ง</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎯</div>
+        <h3>ทำเควส / ภารกิจ</h3>
+        <p>รับทำเควสยาก เควสเบื่อ ตามกิจกรรมประจำและอีเวนท์พิเศษ</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔋</div>
+        <h3>เลเวลลิ่ง / พาวเวอร์เลเวล</h3>
+        <p>เพิ่มเลเวลตัวละครรวดเร็ว ช่วยให้คุณเข้าสู่ช่วงเกมที่ต้องการได้ทันที</p>
       </div>
     </section>
 
-    <!-- Services -->
-    <section class="grid md:grid-cols-3 gap-6 mb-12 max-w-5xl w-full">
-      <div class="feature-card rounded-2xl p-6 text-center hover-lift">
-        <h3 class="text-xl font-semibold mb-2 text-pink-300">หาของ ฟาร์มไอเทม</h3>
-        <p class="text-purple-200">• ฟาร์มไอเทมหายาก อาวุธ เกราะ</p>
+    <section id="pricing" style="margin-top:16px">
+      <h2 style="margin:6px 0 12px">ราคาและแพ็กเกจ (ตัวอย่าง)</h2>
+      <div class="pricing">
+        <div class="price">
+          <h4>แพ็กเกจเริ่มต้น</h4>
+          <div>ฟาร์มทั่วไป / เควสเบา</div>
+          <strong>เริ่มต้น 49 บาท</strong>
+        </div>
+        <div class="price">
+          <h4>แพ็กเกจมาตรฐาน</h4>
+          <div>ฟาร์มไอเท็ม / เลเวลลิ่ง</div>
+          <strong>เริ่มต้น 149 บาท</strong>
+        </div>
+        <div class="price">
+          <h4>แพ็กเกจพรีเมียม</h4>
+          <div>ฟาร์มของหายาก / เควสยาก</div>
+          <strong>เริ่มต้น 399 บาท</strong>
+        </div>
       </div>
-      <div class="feature-card rounded-2xl p-6 text-center hover-lift">
-        <h3 class="text-xl font-semibold mb-2 text-pink-300">เลเวลลิ่ง พาวเวอร์เลเวล</h3>
-        <p class="text-purple-200">• เพิ่มเลเวลตัวละครรวดเร็ว</p>
-      </div>
-      <div class="feature-card rounded-2xl p-6 text-center hover-lift">
-        <h3 class="text-xl font-semibold mb-2 text-pink-300">ทำเควส ภารกิจ</h3>
-        <p class="text-purple-200">• จบเควสยาก เควสเบื่อ</p>
-      </div>
-      <div class="feature-card rounded-2xl p-6 text-center hover-lift">
-        <h3 class="text-xl font-semibold mb-2 text-pink-300"></h3>
-        <p class="text-purple-200"></p>
-      </div>
-      <div class="feature-card rounded-2xl p-6 text-center hover-lift">
-        <h3 class="text-xl font-semibold mb-2 text-pink-300">ฟาร์มเงิน</h3>
-        <p class="text-purple-200">• เก็บเงินในเกม</p>
-      </div>
-      <div class="feature-card rounded-2xl p-6 text-center hover-lift">
-        <h3 class="text-xl font-semibold mb-2 text-pink-300"></h3>
-        <p class="text-purple-200"></p>
+      <div style="margin-top:10px;font-size:14px;color:rgba(255,255,255,0.9)">หมายเหตุ: ราคาตัวอย่าง โปรดติดต่อเราเพื่อราคาที่แน่นอน สำหรับเกมและความต้องการที่แตกต่างกัน</div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h2 style="margin:6px 0 12px">รีวิวจากลูกค้า</h2>
+      <div class="reviews">
+        <div class="review">
+          <strong>⭐️⭐️⭐️⭐️⭐️</strong>
+          <div style="margin-top:8px">ได้ของครบตามที่บอก ไวมาก ทีมงานตอบเร็ว — ชื่อผู้ใช้ A</div>
+        </div>
+        <div class="review">
+          <strong>⭐️⭐️⭐️⭐️</strong>
+          <div style="margin-top:8px">เชื่อถือได้ ไม่โดนแบน ขอบคุณครับ — ชื่อผู้ใช้ B</div>
+        </div>
+        <div class="review">
+          <strong>⭐️⭐️⭐️⭐️⭐️</strong>
+          <div style="margin-top:8px">บริการดี ราคายุติธรรม — ชื่อผู้ใช้ C</div>
+        </div>
       </div>
     </section>
 
-    <!-- CTA Button -->
-    <section class="text-center">
-      <a href="https://www.facebook.com/share/1DFqSrykG3/" target="_blank">
-        <button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 px-12 rounded-full text-xl glow-effect hover-lift shadow-2xl">
-          🚀 สั่งฟาร์ม / ดูราคาบริการ
-        </button>
-      </a>
-      <p class="mt-4 text-purple-200 text-sm">คลิกเพื่อไปหน้าเพจ Facebook ของเรา</p>
+    <section id="how" style="margin-top:18px">
+      <h2 style="margin:6px 0 12px">วิธีการสั่งใช้งาน (ง่ายๆ 3 ขั้น)</h2>
+      <div class="grid">
+        <div class="card"><h3>1. เลือกบริการ</h3><p>เลือกแพ็กเกจหรือบอกความต้องการในเพจ</p></div>
+        <div class="card"><h3>2. ติดต่อแอดมิน</h3><p>ทักเพจ Facebook แจ้งรายละเอียด และชำระเงินตามวิธีที่ตกลง</p></div>
+        <div class="card"><h3>3. รับของ</h3><p>ทีมงานเริ่มทำ ส่งหลักฐานให้ และตรวจสอบจนกว่าจะพอใจ</p></div>
+      </div>
     </section>
 
-    <!-- Decorative -->
-    <div class="absolute top-10 left-10 w-20 h-20 bg-purple-400 rounded-full opacity-20 animate-bounce"></div>
-    <div class="absolute bottom-10 right-10 w-16 h-16 bg-pink-400 rounded-full opacity-20 animate-pulse"></div>
-    <div class="absolute top-1/2 left-5 w-12 h-12 bg-blue-400 rounded-full opacity-15 animate-ping"></div>
+    <section id="faq" style="margin-top:18px">
+      <h2 style="margin:6px 0 12px">คำถามที่พบบ่อย (FAQ)</h2>
+      <div class="faq">
+        <div class="q"><strong>Q:</strong> ถ้าบัญชีโดนแบนจะรับผิดชอบไหม?<br><strong>A:</strong> เราทำตามข้อกำหนดความปลอดภัย แต่หากเกิดการกระทำที่ผิดเงื่อนไขของเกม ทางเรามีข้อกำหนดการคืนเงินตามกรณีที่ตกลงไว้</div>
+        <div class="q"><strong>Q:</strong> ต้องให้รหัสบัญชีไหม?<br><strong>A:</strong> ขึ้นอยู่กับบริการ บางงานอาจต้องเข้าเล่นผ่านทีมงาน แต่เราจะชี้แจงก่อนทุกครั้ง และรักษาความเป็นส่วนตัวของลูกค้า</div>
+        <div class="q"><strong>Q:</strong> ใช้เวลานานเท่าไร?<br><strong>A:</strong> ขึ้นกับประเภทบริการ โปรดสอบถามแอดมินเพื่อประเมินเวลาที่แน่นอน</div>
+      </div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h2 style="margin:6px 0 12px">ช่องทางติดต่อ</h2>
+      <div class="card">
+        <p>เพจ Facebook: <a href="https://www.facebook.com/share/1DFqSrykG3/" target="_blank">ไปที่หน้าเพจเรา</a></p>
+        <p>หากต้องการข้อมูลเพิ่มเติม ทักแอดมินในเพจได้ตลอดเวลา</p>
+      </div>
+    </section>
+
   </main>
+
+  <footer>
+    <div>© 2025 Silent Fang. All Rights Reserved.</div>
+    <div style="margin-top:6px;font-size:13px">คำเตือน: บริการนี้เป็นบริการช่วยเล่นบุคคลที่สาม เราไม่เกี่ยวข้องกับผู้พัฒนาเกม โปรดใช้บริการด้วยความรับผิดชอบ</div>
+  </footer>
+
+  <script>
+    // small enhancement: smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  </script>
 </body>
 </html>
