@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  overflow: hidden;
+  background: black;
+}
+
+canvas#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+  height: 60px;
+}
+
+nav a, .fb-btn {
+  color: #a9d6ff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+nav a:hover, .fb-btn:hover {
+  color: #b47cff;
+  text-shadow: 0 0 10px #b47cff;
+}
+
+.fb-btn {
+  background: none;
+  border: 1px solid #a9d6ff;
+  border-radius: 10px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+section {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.home span {
+  color: #7ec8ff;
+  text-shadow: 0 0 10px #b47cff;
+}
+
+.login-box {
+  width: 300px;
+  margin: 150px auto;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #5e00ff;
+}
+
+input {
+  width: 90%;
+  margin: 10px;
+  padding: 10px;
+  background: black;
+  border: 1px solid #7ec8ff;
+  color: white;
+  border-radius: 5px;
+}
+
+button {
+  background: linear-gradient(90deg, #4b00e0, #8e2de2);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+/* --- แก้ปัญหาเลื่อนลงไม่ได้ --- */
+html, body {
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* พื้นฐาน body */
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+}
+
+/* ดาวพื้นหลัง */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* ให้อยู่ข้างหลังทุกอย่าง */
+}
+
+/* ส่วนเนื้อหาหลัก */
+main.container {
+  padding: 20px;
+  min-height: 100vh;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>บริการ - Silent Fang Shop</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <header>
+    <img src="wolf_daisy.png.png" alt="logo" class="logo" />
+    <nav>
+      <a href="index.html">หน้าแรก</a>
+      <a href="service.html">บริการ</a>
+      <a href="profile.html" id="profileLink">โปรไฟล์</a>
+      <a href="login.html" id="loginLink">เข้าสู่ระบบ</a>
+      <button class="fb-btn" onclick="window.open('https://www.facebook.com/share/1DFqSrykG3/','_blank')">ติดต่อเพจ</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 style="margin-top:28px">บริการของเรา</h1>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <h3>1. ทำสมอ</h3>
+        <p class="small">บริการหาของคราาฟสมอและหาสมอให้</p>
+        <p class="small">ราคา: 50฿ </p>
+        <div class="action-row">
+          <button class="btn" onclick="orderService('ทำสมอ')">สั่งบริการ</button>
+          <button class="btn" onclick="window.open('https://www.facebook.com/share/1DFqSrykG3/','_blank')">คุยในเพจ</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>2. ฟาร์ม Mastery</h3>
+        <p class="small">ฟาร์ม Mastery เร็วและปลอดภัย</p>
+        <p class="small">ราคา: 65฿ </p>
+        <div class="action-row">
+          <button class="btn" onclick="orderService('ฟาร์ม Mastery')">สั่งบริการ</button>
+          <button class="btn" onclick="window.open('https://www.facebook.com/share/1DFqSrykG3/','_blank')">คุยในเพจ</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>3. ดึงคันโยก</h3>
+        <p class="small">บริการดึงคันโยกทำเผ่า V4 — เหมาะสำหรับคนหาเกาะลับไม่เจอ</p>
+        <p class="small">ราคา: 55฿ </p>
+        <div class="action-row">
+          <button class="btn" onclick="orderService('ดึงคันโยก')">สั่งบริการ</button>
+          <button class="btn" onclick="window.open('https://www.facebook.com/share/1DFqSrykG3/','_blank')">คุยในเพจ</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>4. หา กระจก</h3>
+        <p class="small">หาไอเท็มกระจกไว้ทำเผ่า V4</p>
+        <p class="small">ราคา: 50฿ (จำลอง)</p>
+        <div class="action-row">
+          <button class="btn" onclick="orderService('หากระจก')">สั่งบริการ</button>
+          <button class="btn" onclick="window.open('https://www.facebook.com/share/1DFqSrykG3/','_blank')">คุยในเพจ</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>5. ตีบอสแอดมิน</h3>
+        <p class="small">บริการตีบอสแอดมินเพื่อใช้ในการปลดล็อคประตูวาปและทำเผ่า</p>
+        <p class="small">ราคา: 75฿</p>
+        <div class="action-row">
+          <button class="btn" onclick="orderService('ตีบอสแอดมิน')">สั่งบริการ</button>
+          <button class="btn" onclick="window.open('https://www.facebook.com/share/1DFqSrykG3/','_blank')">คุยในเพจ</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>6. ทำเควสโดโจ 8 เควส</h3>
+        <p class="small">บริการทำเควสโดโจครบ 8 เควส เพื่อสามารถเก็บบไข่ในการทำสิ่งอื่นๆได้</p>
+        <p class="small">ราคา: 120฿ (จำลอง)</p>
+        <div class="action-row">
+          <button class="btn" onclick="orderService('ทำเควสโดโจ 8 เควส')">สั่งบริการ</button>
+          <button class="btn" onclick="window.open('https://www.facebook.com/share/1DFqSrykG3/','_blank')">คุยในเพจ</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:28px" class="footer">© Silent Fang Shop</div>
+  </main>
+</body>
+</html>
